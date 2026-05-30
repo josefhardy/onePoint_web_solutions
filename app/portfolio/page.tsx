@@ -6,81 +6,54 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { ExternalLink } from 'lucide-react'
 
-const categories = ['All', 'Food & Beverage', 'Professional Services', 'Retail & E-commerce', 'Health & Wellness', 'Creative & Arts', 'Home Services']
+const categories = ['All', 'Trades & Services', 'Food & Beverage', 'Health & Wellness', 'Fitness & Sport']
 
 const projects = [
   {
-    name: 'The Garden Café',
+    name: 'Volta Electrical',
+    category: 'Trades & Services',
+    description: 'Family-run electrical contractor based in Manchester. A fully fledged multi-page site covering services, about, gallery and contact — built to rank locally and convert enquiries.',
+    highlights: ['Full rewires & fuse boards', 'EV charger installations', 'NICEIC registered'],
+    image: '/volta.webp',
+    url: 'https://josefhardy12.github.io/volta_electrical/',
+    color: 'from-yellow-500/20 to-amber-500/20',
+  },
+  {
+    name: 'Ember & Rye',
     category: 'Food & Beverage',
-    description: 'Family-run café featuring an online menu, opening hours, and contact information. Clean layout with appetizing food photography.',
-    highlights: ['Mobile-friendly menu', 'Google Maps integration', 'Contact form'],
-    image: 'cozy cafe restaurant website with menu and photos',
-    color: 'from-amber-500/20 to-orange-500/20',
+    description: 'A casual neighbourhood restaurant in Peckham, South London. Seasonal British cooking with West African influences. Warm, editorial design with online reservations and a full menu.',
+    highlights: ['Online reservations', 'Seasonal menu', 'Gallery & about pages'],
+    image: '/ember.webp',
+    url: 'https://josefhardy12.github.io/ember-rye-digital/',
+    color: 'from-orange-500/20 to-red-500/20',
   },
   {
-    name: 'Harrison & Associates',
-    category: 'Professional Services',
-    description: 'Accountancy firm website with service pages, team bios, and client testimonials. Professional design that builds trust.',
-    highlights: ['Service showcase', 'Team profiles', 'Client testimonials'],
-    image: 'professional accountant office website clean corporate design',
-    color: 'from-blue-500/20 to-indigo-500/20',
-  },
-  {
-    name: 'Evergreen Landscaping',
-    category: 'Home Services',
-    description: 'Local landscaping company with before/after gallery, service list, and quote request form. Emphasizes quality workmanship.',
-    highlights: ['Project gallery', 'Service descriptions', 'Quote request form'],
-    image: 'landscaping gardening business website with green nature theme',
+    name: 'Cairn & Co.',
+    category: 'Health & Wellness',
+    description: 'A luxury day spa in Edinburgh\'s New Town, housed in a Georgian townhouse. Clean, minimal design with a full treatments menu, online booking and gift vouchers.',
+    highlights: ['Full treatments menu', 'Online booking form', 'Gift vouchers'],
+    image: '/cairn.webp',
+    url: 'https://josefhardy12.github.io/cairn-co.-spa/',
     color: 'from-green-500/20 to-emerald-500/20',
   },
   {
-    name: 'Serenity Spa & Wellness',
-    category: 'Health & Wellness',
-    description: 'Wellness center offering massage and beauty treatments. Elegant, calming design with online booking functionality.',
-    highlights: ['Online booking', 'Treatment menu', 'Gift vouchers'],
-    image: 'spa wellness salon website elegant calming design',
-    color: 'from-purple-500/20 to-pink-500/20',
-  },
-  {
-    name: 'Urban Threads Boutique',
-    category: 'Retail & E-commerce',
-    description: 'Fashion boutique with product catalog, size guides, and secure checkout. Modern, visually-driven shopping experience.',
-    highlights: ['Product catalog', 'Shopping cart', 'Secure payments'],
-    image: 'fashion clothing boutique ecommerce website modern style',
-    color: 'from-rose-500/20 to-red-500/20',
-  },
-  {
-    name: 'Martin Photography',
-    category: 'Creative & Arts',
-    description: 'Wedding and portrait photographer portfolio showcasing stunning imagery with booking enquiry form.',
-    highlights: ['Portfolio galleries', 'Package pricing', 'Contact form'],
-    image: 'photography portfolio website with beautiful image galleries',
-    color: 'from-slate-500/20 to-gray-500/20',
-  },
-  {
-    name: 'TechFix Solutions',
-    category: 'Professional Services',
-    description: 'IT support company website with service offerings, support ticket system, and customer login portal.',
-    highlights: ['Service pages', 'Support system', 'Client portal'],
-    image: 'IT technology support business website modern tech design',
-    color: 'from-cyan-500/20 to-blue-500/20',
-  },
-  {
-    name: 'Blossom Florist',
-    category: 'Retail & E-commerce',
-    description: 'Local florist with seasonal arrangements, wedding packages, and same-day delivery options. Bright, cheerful aesthetic.',
-    highlights: ['Product catalog', 'Delivery options', 'Special occasions'],
-    image: 'florist flower shop website colorful floral design',
-    color: 'from-pink-500/20 to-rose-500/20',
+    name: 'Iron District Boxing Club',
+    category: 'Fitness & Sport',
+    description: 'An independent boxing gym in Bermondsey, South London. Bold, editorial design with a weekly class timetable, coach profiles and membership options.',
+    highlights: ['Weekly class timetable', 'Coach profiles', 'Membership plans'],
+    image: '/irondistrict.webp',
+    url: 'https://josefhardy12.github.io/iron-district-boxing/',
+    color: 'from-red-500/20 to-rose-500/20',
   },
 ]
 
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'All'
+    ? projects
     : projects.filter(project => project.category === selectedCategory)
 
   return (
@@ -92,10 +65,10 @@ export default function PortfolioPage() {
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-foreground mb-4 text-balance">Our Portfolio</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty mb-6">
-               From clean corporate designs to bold creative layouts, warm hospitality pages, modern e-commerce stores, and functional service-business sites. Whatever your style or industry, we can design a website that fits your brand perfectly.
+              A selection of demo sites built across different industries — from trades and hospitality to wellness and sport. Each one is fully responsive, multi-page and built to convert.
             </p>
             <p className="text-base text-muted-foreground max-w-3xl mx-auto text-pretty">
-              At onePoint we strive to create sites that not only fit your vision but also deliver results
+              Every site is a concept build showing what we can create for your business. Your site will be tailored specifically to you.
             </p>
           </div>
 
@@ -117,11 +90,11 @@ export default function PortfolioPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {filteredProjects.map((project) => (
               <Card key={project.name} className="rounded-3xl border-border overflow-hidden group hover:shadow-lg transition-all">
-                <div className={`h-64 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden`}>
+                <div className={`h-64 bg-gradient-to-br ${project.color} overflow-hidden`}>
                   <img
-                    src={`/.jpg?height=400&width=600&query=${project.image}`}
+                    src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader>
@@ -136,7 +109,7 @@ export default function PortfolioPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
+                  <div className="space-y-2 mb-6">
                     {project.highlights.map((highlight) => (
                       <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full" />
@@ -144,6 +117,16 @@ export default function PortfolioPage() {
                       </div>
                     ))}
                   </div>
+                  
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline" className="rounded-full w-full gap-2">
+                      View Live Site
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -157,7 +140,7 @@ export default function PortfolioPage() {
                   Ready to Start Your Project?
                 </CardTitle>
                 <CardDescription className="text-lg text-pretty">
-                  Let's create something amazing together. Get your free first-draft homepage today.
+                  Let's create something amazing together. Get your free first-draft homepage today — no commitment required.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center pb-8">
