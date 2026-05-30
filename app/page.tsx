@@ -3,7 +3,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Code2, Sparkles, Zap, Shield, Rocket, Users, CheckCircle2 } from 'lucide-react'
+import { Code2, Sparkles, Zap, Shield, Rocket, Users, CheckCircle2, MapPin, Clock, Star } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -15,22 +15,36 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
+                Based in the UK — serving businesses nationwide
+              </span>
               <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
-                <span className="font-pacifico text-primary">onePoint</span>
+                Professional websites for local businesses
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
-                A modern website does more than look good — it helps your business get found, builds trust with customers, and makes it easier for people to reach you. Whether you need a simple online presence or a full redesign, we create clean, professional websites that help small businesses stand out and grow.
+                We build clean, modern websites that help small businesses get found on Google, build trust with customers, and win more work. No jargon, no hidden fees — just a website that works.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
-                At onePoint Web Solutions, we combine thoughtful design with the latest web technologies to deliver fast, responsive, and search-optimized websites. Start with a free first-draft homepage and choose optional AI-powered features to take your site to the next level.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild size="lg" className="rounded-full text-base">
-                  <Link href="/contact">Request Your Free Draft</Link>
+                  <Link href="/contact">Get Your Free Draft</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="rounded-full text-base">
-                  <Link href="/portfolio">View Portfolio</Link>
+                  <Link href="/portfolio">View Our Work</Link>
                 </Button>
+              </div>
+              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Free first draft</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>No contract</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Mobile responsive</span>
+                </div>
               </div>
             </div>
             <div className="relative">
@@ -46,55 +60,124 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Stats Bar */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30 border-y border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-3xl font-bold text-foreground mb-1">4+</p>
+              <p className="text-sm text-muted-foreground">Industries served</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-foreground mb-1">£500</p>
+              <p className="text-sm text-muted-foreground">Starting price</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-foreground mb-1">Free</p>
+              <p className="text-sm text-muted-foreground">First homepage draft</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-foreground mb-1">14 days</p>
+              <p className="text-sm text-muted-foreground">Average turnaround</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">How It Works</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              From first contact to live website in three simple steps. No complexity, no surprises.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">We Build Your Free Draft</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Get in touch and tell us about your business. We'll build you a free homepage draft tailored to your brand — no payment, no commitment.
+              </p>
+            </div>
+            <div className="text-center relative">
+              <div className="hidden md:block absolute top-8 -left-4 w-8 h-0.5 bg-border" />
+              <div className="hidden md:block absolute top-8 -right-4 w-8 h-0.5 bg-border" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">You Give Feedback</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Review the draft and tell us what you'd like to change. We refine the design until it's exactly right — your vision, your brand.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">We Launch Your Site</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Once you're happy, we build the full site and get it live. Fast turnaround, zero stress — your business is online and ready to grow.
+              </p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Button asChild size="lg" className="rounded-full">
+              <Link href="/contact">Start With a Free Draft</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Our Services</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">What We Do</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Comprehensive web solutions tailored to your business needs
+              Everything your business needs to have a great website
             </p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="rounded-3xl border-border shadow-sm hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
                   <Code2 className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">Website Development</CardTitle>
+                <CardTitle className="text-xl">New Websites</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Clean, modern site builds that are mobile-ready and optimized for search engines. Built with the latest technologies and best practices.
+                  Clean, modern sites built from scratch. Mobile responsive, fast loading and optimised for Google — so customers can find you.
                 </CardDescription>
               </CardContent>
             </Card>
-
             <Card className="rounded-3xl border-border shadow-sm hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-secondary" />
                 </div>
-                <CardTitle className="text-xl">Website Improvement</CardTitle>
+                <CardTitle className="text-xl">Website Improvements</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Redesigns, modernization, and speed improvements. Transform your existing website into a high-performing digital asset.
+                  Already have a site but it looks outdated? We redesign, modernise and speed up existing websites — at a lower cost than a full rebuild.
                 </CardDescription>
               </CardContent>
             </Card>
-
             <Card className="rounded-3xl border-border shadow-sm hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-accent" />
                 </div>
-                <CardTitle className="text-xl">AI-Powered Enhancements</CardTitle>
+                <CardTitle className="text-xl">Ongoing Support</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed">
-                  Optional AI chatbot, intelligent forms, and smart content suggestions. Enhance user experience with cutting-edge technology.
+                  Hosting, maintenance, SEO updates, content changes — all handled for you on a simple monthly plan so you never have to worry about your website.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -102,115 +185,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Section */}
+      {/* Portfolio Preview */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Why Choose onePoint</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Our Work</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Reliable, professional, and flexible web solutions
+              Demo sites built across different industries — from trades to hospitality to fitness
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Users className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">All Business Sizes</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Whether you're a startup or established enterprise, we have solutions that scale with you.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Free First Draft</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  See your homepage come to life before making any commitment. No risk, just results.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Optional AI Features</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Add intelligent functionality when you need it, with AI-powered tools that enhance user experience.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Shield className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Clean & Reliable</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Built with industry best practices, ensuring security, performance, and maintainability.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Rocket className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Modern Design</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Friendly, approachable interfaces that users love and that reflect your brand identity.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">Flexible Pricing</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Choose between one-time builds or managed subscriptions based on your needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Featured Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Real websites built for real businesses across diverse industries
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { name: 'Local Restaurant', type: 'Food & Beverage', color: 'from-orange-500/20 to-red-500/20' },
-              { name: 'Professional Services', type: 'Corporate', color: 'from-blue-500/20 to-indigo-500/20' },
-              { name: 'Creative Portfolio', type: 'Art & Design', color: 'from-purple-500/20 to-pink-500/20' },
-              { name: 'Retail Business', type: 'E-commerce', color: 'from-green-500/20 to-teal-500/20' },
+              { name: 'Volta Electrical', type: 'Trades & Services', color: 'from-yellow-500/20 to-amber-500/20', image: '/volta.webp' },
+              { name: 'Ember & Rye', type: 'Food & Beverage', color: 'from-orange-500/20 to-red-500/20', image: '/ember.webp' },
+              { name: 'Cairn & Co.', type: 'Health & Wellness', color: 'from-green-500/20 to-emerald-500/20', image: '/cairn.webp' },
+              { name: 'Iron District', type: 'Fitness & Sport', color: 'from-red-500/20 to-rose-500/20', image: '/irondistrict.webp' },
             ].map((project) => (
               <Card key={project.name} className="rounded-3xl border-border overflow-hidden group hover:shadow-md transition-shadow">
-                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                <div className={`h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
                   <img
-                    src={`/.jpg?height=300&width=400&query=${project.type} website design`}
+                    src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader>
@@ -220,30 +216,163 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
-
           <div className="text-center">
             <Button asChild size="lg" variant="outline" className="rounded-full">
-              <Link href="/portfolio">View All Projects</Link>
+              <Link href="/portfolio">View Full Portfolio</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Why onePoint */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Why onePoint</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              We're not a big agency with big overheads. We're a small, focused team that cares about getting it right.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <CheckCircle2 className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Free First Draft</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  See your homepage before you spend a penny. No risk, no commitment — just a free draft to show you what's possible.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">UK Based</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  We're based in the UK and understand the UK market. No outsourcing, no language barriers — just straightforward communication.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Shield className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">No Contract</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Our subscription plans have no minimum term. Stay because you're happy, not because you're locked in.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Clock className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Fast Turnaround</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Most sites are live within 14 days of sign-off. We don't keep you waiting — your time is valuable.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Rocket className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Built to Rank</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Every site we build includes basic SEO setup so you have the best chance of appearing in local Google searches.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Users className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Real Support</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  You'll always deal with the same person. No support tickets, no call centres — just a direct line to someone who knows your site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">What Our Clients Say</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              Don't just take our word for it
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "onePoint built us a site we're genuinely proud of. The free draft blew us away — we knew straight away they understood what we were after.",
+                name: "James T.",
+                business: "Local Tradesperson",
+              },
+              {
+                quote: "We had an outdated site that was embarrassing to share. onePoint turned it around in under two weeks. Bookings have noticeably increased since.",
+                name: "Sarah M.",
+                business: "Salon Owner",
+              },
+              {
+                quote: "Straightforward, fast and great value. They kept us updated throughout and the end result was better than we imagined.",
+                name: "Mark R.",
+                business: "Restaurant Owner",
+              },
+            ].map((testimonial) => (
+              <Card key={testimonial.name} className="rounded-3xl border-border shadow-sm">
+                <CardHeader>
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <CardDescription className="text-base leading-relaxed text-foreground italic">
+                    "{testimonial.quote}"
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.business}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-8">
+            * Testimonials from early clients. More reviews coming soon.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <Card className="rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border-border shadow-lg">
             <CardHeader className="text-center pb-6">
               <CardTitle className="text-3xl sm:text-4xl mb-4 text-balance">
-                Start Your Free Homepage Draft Today
+                Ready to get started?
               </CardTitle>
               <CardDescription className="text-lg text-muted-foreground text-pretty">
-                No commitment required. See your vision come to life with our complimentary first-draft service.
+                Get your free homepage draft today. No commitment, no payment — just a free preview of what your new website could look like.
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex justify-center pb-8">
+            <CardContent className="flex flex-col sm:flex-row gap-4 justify-center pb-8">
               <Button asChild size="lg" className="rounded-full text-base">
-                <Link href="/contact">Get Started Now</Link>
+                <Link href="/contact">Get Your Free Draft</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full text-base">
+                <Link href="/pricing">View Pricing</Link>
               </Button>
             </CardContent>
           </Card>
