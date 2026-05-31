@@ -3,7 +3,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Code2, Sparkles, Zap, Shield, Rocket, Users, CheckCircle2, MapPin, Clock, Star } from 'lucide-react'
+import { Code2, Sparkles, Zap, Shield, Rocket, Users, CheckCircle2, MapPin, Clock } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -12,56 +12,43 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
-                Based in the UK — serving businesses nationwide
-              </span>
-              <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
-                Professional websites for local businesses
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
-                We build clean, modern websites that help small businesses get found on Google, build trust with customers, and win more work. No jargon, no hidden fees — just a website that works.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="rounded-full text-base">
-                  <Link href="/contact">Get Your Free Draft</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full text-base">
-                  <Link href="/portfolio">View Our Work</Link>
-                </Button>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Free first draft</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>No contract</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>Mobile responsive</span>
-                </div>
-              </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-block text-sm font-medium text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
+            Based in the UK — serving businesses nationwide
+          </span>
+          <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
+            Professional websites for local businesses
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty max-w-2xl mx-auto">
+            We build clean, modern websites that help small businesses get found on Google, build trust with customers, and win more work. No jargon, no hidden fees — just a website that works.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
+            <Button asChild size="lg" className="rounded-full text-base">
+              <Link href="/contact">Get Your Free Draft</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-full text-base">
+              <Link href="/portfolio">View Our Work</Link>
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground justify-center">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>Free first draft</span>
             </div>
-            <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 p-8 flex items-center justify-center overflow-hidden">
-                <img
-                  src="/modern-professional-business-website-on-laptop-and-mobile-devices.jpg"
-                  alt="Modern business website design"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>No contract</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>Mobile responsive</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">How It Works</h2>
@@ -109,7 +96,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">What We Do</h2>
@@ -162,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Our Work</h2>
@@ -201,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Why onePoint */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">Why onePoint</h2>
