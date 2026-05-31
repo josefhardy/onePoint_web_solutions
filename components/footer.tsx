@@ -13,10 +13,9 @@ export function Footer() {
               <span className="text-lg font-semibold text-foreground">onePoint Web Solutions</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-              Professional web development services with a focus on clean, modern design and optional AI-powered features for businesses of all sizes.
+              Professional websites for UK small businesses. Clean, modern design, built to rank on Google — with a free first draft and no contract required.
             </p>
           </div>
-
           <div>
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -42,18 +41,16 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
           <div>
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Website Development</li>
-              <li className="text-sm text-muted-foreground">Website Improvement</li>
-              <li className="text-sm text-muted-foreground">AI-Powered Enhancements</li>
-              <li className="text-sm text-muted-foreground">Free First Draft</li>
+              <li className="text-sm text-muted-foreground">New Websites</li>
+              <li className="text-sm text-muted-foreground">Website Improvements</li>
+              <li className="text-sm text-muted-foreground">Ongoing Support & Maintenance</li>
+              <li className="text-sm text-muted-foreground">SEO & GEO Optimisation</li>
             </ul>
           </div>
         </div>
-
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} onePoint Web Solutions. All rights reserved.

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Pacifico } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,26 +10,8 @@ const pacifico = Pacifico({
 });
 
 export const metadata: Metadata = {
-  title: 'onePoint Web Solutions - Modern Web Development',
-  description: 'Professional web development services with free first-draft homepage and optional AI-powered features for businesses of all sizes.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: 'onePoint Web Solutions — Professional Websites for UK Small Businesses',
+  description: 'We build clean, modern websites for UK small businesses. Mobile responsive, built to rank on Google, with a free first-draft homepage and no contract required.',
 }
 
 export default function RootLayout({
@@ -42,7 +23,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${pacifico.variable} font-sans antialiased`}>
         {children}
-        <Analytics />
       </body>
     </html>
   )
