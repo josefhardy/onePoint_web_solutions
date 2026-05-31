@@ -4,7 +4,13 @@ import { useState } from 'react'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
@@ -17,43 +23,63 @@ export default function ContactPage() {
     businessName: '',
     message: '',
   })
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState(false)
 
   const encode = (data: Record<string, string>) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .map(
+        (key) =>
+          encodeURIComponent(key) +
+          '=' +
+          encodeURIComponent(data[key])
+      )
       .join('&')
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
     setIsSubmitting(true)
     setError(false)
 
     try {
       await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {
+          'Content-Type':
+            'application/x-www-form-urlencoded',
+        },
         body: encode({
           'form-name': 'contact',
           ...formData,
         }),
       })
-      setIsSubmitting(false)
+
       setSubmitted(true)
-      setFormData({ name: '', email: '', businessName: '', message: '' })
+      setFormData({
+        name: '',
+        email: '',
+        businessName: '',
+        message: '',
+      })
     } catch {
-      setIsSubmitting(false)
       setError(true)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -61,8 +87,19 @@ export default function ContactPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Hidden form for Netlify to detect */}
-      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      {/* Hidden Netlify Form */}
+      <form
+        name="contact"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        hidden
+      >
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact"
+        />
+        <input type="hidden" name="bot-field" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="businessName" />
@@ -72,9 +109,13 @@ export default function ContactPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-foreground mb-4 text-balance">Get In Touch</h1>
+            <h1 className="text-5xl font-bold text-foreground mb-4 text-balance">
+              Get In Touch
+            </h1>
+
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Ready to start your free first-draft homepage? Let's discuss your project.
+              Ready to start your free first-draft homepage?
+              Let&apos;s discuss your project.
             </p>
           </div>
 
@@ -83,33 +124,58 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <Card className="rounded-3xl border-border shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                  <CardTitle className="text-2xl">
+                    Send Us a Message
+                  </CardTitle>
+
                   <CardDescription className="text-base">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    Fill out the form below and
+                    we&apos;ll get back to you within 24
+                    hours.
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent>
                   {submitted ? (
                     <div className="text-center py-12">
                       <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Mail className="w-8 h-8 text-primary" />
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
-                      <p className="text-muted-foreground">Thanks for getting in touch. We'll get back to you within 24 hours.</p>
+
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        Message Sent!
+                      </h3>
+
+                      <p className="text-muted-foreground">
+                        Thanks for getting in touch.
+                        We&apos;ll get back to you within
+                        24 hours.
+                      </p>
                     </div>
                   ) : (
                     <form
                       onSubmit={handleSubmit}
-                      className="space-y-6"
                       name="contact"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
+                      className="space-y-6"
                     >
-                      <input type="hidden" name="form-name" value="contact" />
-                      <input type="hidden" name="bot-field" />
+                      <input
+                        type="hidden"
+                        name="form-name"
+                        value="contact"
+                      />
+
+                      <input
+                        type="hidden"
+                        name="bot-field"
+                      />
 
                       <div className="space-y-2">
-                        <Label htmlFor="name">Name *</Label>
+                        <Label htmlFor="name">
+                          Name *
+                        </Label>
+
                         <Input
                           id="name"
                           name="name"
@@ -122,7 +188,10 @@ export default function ContactPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">
+                          Email *
+                        </Label>
+
                         <Input
                           id="email"
                           name="email"
@@ -136,7 +205,10 @@ export default function ContactPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="businessName">Business Name</Label>
+                        <Label htmlFor="businessName">
+                          Business Name
+                        </Label>
+
                         <Input
                           id="businessName"
                           name="businessName"
@@ -148,7 +220,10 @@ export default function ContactPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
+                        <Label htmlFor="message">
+                          Message *
+                        </Label>
+
                         <Textarea
                           id="message"
                           name="message"
@@ -162,7 +237,10 @@ export default function ContactPage() {
                       </div>
 
                       {error && (
-                        <p className="text-red-500 text-sm">Something went wrong. Please try again.</p>
+                        <p className="text-red-500 text-sm">
+                          Something went wrong. Please
+                          try again.
+                        </p>
                       )}
 
                       <Button
@@ -171,7 +249,9 @@ export default function ContactPage() {
                         className="w-full rounded-full"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                        {isSubmitting
+                          ? 'Sending...'
+                          : 'Send Message'}
                       </Button>
                     </form>
                   )}
@@ -179,21 +259,32 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            {/* Side info */}
+            {/* Side Info */}
+            <div className="space-y-6">
               <Card className="rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border-border">
                 <CardHeader>
-                  <CardTitle className="text-xl">Free First Draft</CardTitle>
+                  <CardTitle className="text-xl">
+                    Free First Draft
+                  </CardTitle>
+
                   <CardDescription>
-                    Your first homepage draft is completely free with no commitment required.
+                    Your first homepage draft is
+                    completely free with no commitment
+                    required.
                   </CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="rounded-3xl border-border shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl">Based in the UK</CardTitle>
+                  <CardTitle className="text-xl">
+                    Based in the UK
+                  </CardTitle>
+
                   <CardDescription>
-                    Serving businesses across the United Kingdom. We work remotely so we can help you wherever you are.
+                    Serving businesses across the
+                    United Kingdom. We work remotely so
+                    we can help you wherever you are.
                   </CardDescription>
                 </CardHeader>
               </Card>
