@@ -180,29 +180,6 @@ export default function ContactPage() {
             </div>
 
             {/* Side info */}
-            <div className="space-y-6">
-              <Card className="rounded-3xl border-border shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl">Contact Information</CardTitle>
-                  <CardDescription>
-                    Prefer to reach out directly? Drop us an email.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground mb-1">Email</p>
-                      <a href="mailto:hello@onepointwebsolutions.com" className="text-sm text-muted-foreground hover:text-primary">
-                        hello@onepointwebsolutions.com
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
               <Card className="rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border-border">
                 <CardHeader>
                   <CardTitle className="text-xl">Free First Draft</CardTitle>
