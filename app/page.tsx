@@ -60,30 +60,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30 border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-3xl font-bold text-foreground mb-1">4+</p>
-              <p className="text-sm text-muted-foreground">Industries served</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-foreground mb-1">£500</p>
-              <p className="text-sm text-muted-foreground">Starting price</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-foreground mb-1">Free</p>
-              <p className="text-sm text-muted-foreground">First homepage draft</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-foreground mb-1">14 days</p>
-              <p className="text-sm text-muted-foreground">Average turnaround</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How It Works */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -301,57 +277,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4 text-balance">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Don't just take our word for it
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "onePoint built us a site we're genuinely proud of. The free draft blew us away — we knew straight away they understood what we were after.",
-                name: "James T.",
-                business: "Local Tradesperson",
-              },
-              {
-                quote: "We had an outdated site that was embarrassing to share. onePoint turned it around in under two weeks. Bookings have noticeably increased since.",
-                name: "Sarah M.",
-                business: "Salon Owner",
-              },
-              {
-                quote: "Straightforward, fast and great value. They kept us updated throughout and the end result was better than we imagined.",
-                name: "Mark R.",
-                business: "Restaurant Owner",
-              },
-            ].map((testimonial) => (
-              <Card key={testimonial.name} className="rounded-3xl border-border shadow-sm">
-                <CardHeader>
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <CardDescription className="text-base leading-relaxed text-foreground italic">
-                    "{testimonial.quote}"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.business}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            * Testimonials from early clients. More reviews coming soon.
-          </p>
         </div>
       </section>
 
